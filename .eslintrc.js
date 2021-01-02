@@ -83,7 +83,7 @@ module.exports = {
         tsx: 'never',
       },
     ],
-    'prefer-arrow/prefer-arrow-functions': [
+    'prefer-arrow/prefer-arrow-functions': [ // Unify function definition with Arrow function
       'error',
       {
         disallowPrototype: true,
