@@ -1,3 +1,5 @@
+// Having path for TypeScript compile settings
+// https://github.com/typescript-eslint/typescript-eslint/issues/890
 {
   "extends": "./tsconfig.json",
   "include": [

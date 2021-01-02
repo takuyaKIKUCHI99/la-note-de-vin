@@ -1,9 +1,9 @@
 module.exports = {
-  "env": {
+  "env": { // Program execution environment
     "browser": true,
-    "es2020": true
+    "es2021": true
   },
-  "extends": [
+  "extends": [ // Sharing settings
     "plugin:react/recommended",
     "airbnb",
     'airbnb/hooks',
@@ -24,7 +24,7 @@ module.exports = {
     "ecmaFeatures": {
       "jsx": true
     },
-    ecmaVersion: 2020,
+    ecmaVersion: 12,
     project: './tsconfig.eslint.json',
     "sourceType": "module",
     tsconfigRootDir: __dirname,
@@ -38,29 +38,34 @@ module.exports = {
     "react",
     'react-hooks',
   ],
-  root: true,
-  rules: {
-    'lines-between-class-members': [
+  root: true, // To prevent the default behaving to load the parent directory settings
+  rules: { // Customizing the sharing settings in 'extends'
+    // To avoid 'no-use-before-define' error, refer to the following link for details
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-use-before-define.md#how-to-use
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
+    'lines-between-class-members': [ // Whether or not to include blank lines between class member definitions
       'error',
       'always',
       {
         exceptAfterSingleLine: true,
       },
     ],
-    // should be rewritten as `['error', { allowAsStatement: true }]` in ESLint 7 or later
-    // SEE: https://github.com/typescript-eslint/typescript-eslint/issues/1184
-    'no-void': 'off',
-    'padding-line-between-statements': [
+    'no-void': [ // Prohibit the use of the void operator as an expression
       'error',
-      {
+      { allowAsStatement: true }
+    ],
+    'padding-line-between-statements': [ // To include a separating blank line between arbitrary syntax
+      'error',
+      { // Always add a separating blank line before 'return' statement
         blankLine: 'always',
         prev: '*',
         next: 'return',
       },
     ],
-    '@typescript-eslint/no-unused-vars': [
+    '@typescript-eslint/no-unused-vars': [ // Prohibit the use of unused variables
       'error',
-      {
+      { // Allow only '_'
         'vars': 'all',
         'args': 'after-used',
         'argsIgnorePattern': '_',
@@ -88,31 +93,31 @@ module.exports = {
     ],
     'react/jsx-filename-extension': [
       'error',
-      {
+      { // Add '.tsx' as eslint-config-airbnb limit with '.jsx' only
         extensions: ['.jsx', '.tsx'],
       },
     ],
     'react/jsx-props-no-spreading': [
       'error',
-      {
+      { // Allow writing that specifies the individual props
         html: 'enforce',
         custom: 'enforce',
         explicitSpread: 'ignore',
       },
     ],
   },
-  overrides: [
+  overrides: [ // Overriding the settings for files that matches
     {
       'files': ['*.tsx'],
       'rules': {
-        'react/prop-types': 'off',
+        'react/prop-types': 'off', // Disabling the rules to force the definition of propTypes
       },
     },
   ],
-  settings: {
+  settings: { // Additional sharing settings
     'import/resolver': {
       node: {
-        paths: ['src'],
+        paths: ['src'], // To avoid an error for calling with an absolute path
       },
     },
   },

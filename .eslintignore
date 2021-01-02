@@ -1,3 +1,4 @@
+# Out of scope of ESLint check
 build/
 public/
 **/coverage/
