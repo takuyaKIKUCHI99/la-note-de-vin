@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import 'semantic-ui-css/semantic.min.css';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import 'semantic-ui-less/semantic.less';
 
 ReactDOM.render(
   <React.StrictMode>

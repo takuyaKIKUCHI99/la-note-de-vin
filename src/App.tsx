@@ -5,7 +5,8 @@ import './App.css';
 const App: React.FC = () => {
   return (
     <div className="App">
-      <Button>Click Here</Button>
+      <Button primary>夜空に流れ星</Button>
+      <Button secondary>Secondary</Button>
     </div>
   );
 };
