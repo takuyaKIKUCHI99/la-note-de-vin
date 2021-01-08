@@ -1,7 +1,7 @@
-import React from 'react';
-import TastingSheet from 'pages/TastingSheet/TastingSheet';
+import React, { FC } from 'react';
+import TastingSheet from 'containers/pages/TastingSheet';
 
-const App: React.FC = () => {
+const App: FC = () => {
   return (
     <div className="App">
       <TastingSheet />

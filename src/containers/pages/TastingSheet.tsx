@@ -1,19 +1,14 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Button, Form } from 'semantic-ui-react';
+import Input from 'components/Input';
 
-const TastingSheet: React.FC = () => (
+const TastingSheet: FC = () => (
   <Form>
     <Form.Field>
-      <label htmlFor="wineName">
-        First Name
-        <input id="wineName" placeholder="First Name" />
-      </label>
+      <Input label="Wine Name" />
     </Form.Field>
     <Form.Field>
-      <label htmlFor="vintage">
-        Last Name
-        <input id="vintage" placeholder="Last Name" />
-      </label>
+      <Input label="Vintage" />
     </Form.Field>
     {/* Appearance component */}
     {/* Nose component */}
