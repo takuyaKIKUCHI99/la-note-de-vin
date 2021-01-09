@@ -5,7 +5,7 @@ type Props = {
   label: string;
 };
 
-const Input: FC<Props> = ({ label }) => (
+const TextInput: FC<Props> = ({ label }) => (
   <Form.Field>
     <label htmlFor={label}>
       {label}
@@ -14,4 +14,4 @@ const Input: FC<Props> = ({ label }) => (
   </Form.Field>
 );
 
-export default Input;
+export default TextInput;

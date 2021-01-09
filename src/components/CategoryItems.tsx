@@ -1,12 +1,12 @@
 import React, { FC } from 'react';
 import { Checkbox } from 'semantic-ui-react';
 
-type Checkbox = {
+export type CheckboxType = {
   [key: string]: boolean;
 };
 
 type Props = {
-  items: Checkbox;
+  items: CheckboxType;
 };
 
 const CheckboxGroup: FC<Props> = ({ items }) => {
