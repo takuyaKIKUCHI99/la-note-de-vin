@@ -5,7 +5,7 @@ type Props = {
   label: string;
 };
 
-const TastingSheet: FC<Props> = ({ label }) => (
+const Input: FC<Props> = ({ label }) => (
   <Form.Field>
     <label htmlFor={label}>
       {label}
@@ -14,4 +14,4 @@ const TastingSheet: FC<Props> = ({ label }) => (
   </Form.Field>
 );
 
-export default TastingSheet;
+export default Input;

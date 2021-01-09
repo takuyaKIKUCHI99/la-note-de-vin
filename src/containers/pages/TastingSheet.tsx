@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { Button, Form } from 'semantic-ui-react';
+import CheckboxGroup from 'components/CheckboxGroup';
 import Input from 'components/Input';
 
 const TastingSheet: FC = () => (
@@ -11,6 +12,7 @@ const TastingSheet: FC = () => (
       <Input label="Vintage" />
     </Form.Field>
     {/* Appearance component */}
+    <CheckboxGroup items={{ test: false, test2: true }} />
     {/* Nose component */}
     {/* Palate component */}
     {/* /Conclusion component */}
