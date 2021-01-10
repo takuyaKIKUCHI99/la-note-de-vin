@@ -1,8 +1,11 @@
 import React, { FC, ChangeEvent, useState } from 'react';
 import { Button, Form, Header } from 'semantic-ui-react';
-import TextInput from 'components/TextInput';
-import TastingCategory from 'components/TastingCategory';
-import { APPEARANCE, NOSE, PALATE, CONCLUSION } from 'constants/index';
+import TextInput from 'components/molecules/TextInput';
+import TastingCategory, {
+  Categories,
+} from 'components/organisms/TastingCategory';
+import { APPEARANCE } from 'constants/index';
+// import { APPEARANCE, NOSE, PALATE, CONCLUSION } from 'constants/index';
 
 type Props = {
   type: 'red' | 'white';
@@ -11,10 +14,10 @@ type Props = {
 const TastingSheet: FC<Props> = ({ type }) => {
   const [wineName, setWineName] = useState('');
   const [vintage, setVintage] = useState('');
-  const [appearance, setAppearance] = useState(APPEARANCE);
-  const [nose, setNose] = useState(NOSE);
-  const [palate, setPalate] = useState(PALATE);
-  const [conclusion, setConclusion] = useState(CONCLUSION);
+  const [appearance, setAppearance] = useState<Categories>(APPEARANCE);
+  // const [nose, setNose] = useState<Categories>(NOSE);
+  // const [palate, setPalate] = useState<Categories>(PALATE);
+  // const [conclusion, setConclusion] = useState<Categories>(CONCLUSION);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
@@ -27,19 +30,19 @@ const TastingSheet: FC<Props> = ({ type }) => {
         setVintage(value);
         break;
       case '外観':
-        setAppearance({ test: false, test2: true });
+        setAppearance(APPEARANCE);
         break;
-      case '香り':
-        setNose({ test: false, test2: true });
-        break;
-      case '味わい':
-        setPalate({ test: false, test2: true });
-        break;
-      case '総合評価':
-        setConclusion({ test: false, test2: true });
-        break;
+      // case '香り':
+      //   setNose({ test: false, test2: true });
+      //   break;
+      // case '味わい':
+      //   setPalate({ test: false, test2: true });
+      //   break;
+      // case '総合評価':
+      //   setConclusion({ test: false, test2: true });
+      //   break;
       default:
-        console.log('something went wrong');
+      // This will not happen
     }
   };
 
@@ -59,10 +62,10 @@ const TastingSheet: FC<Props> = ({ type }) => {
           value={vintage}
           handleChange={handleChange}
         />
-        <TastingCategory title="外観" items={appearance} />
-        <TastingCategory title="香り" items={nose} />
-        <TastingCategory title="味わい" items={palate} />
-        <TastingCategory title="総合評価" items={conclusion} />
+        <TastingCategory title="外観" category={appearance} />
+        {/* <TastingCategory title="香り" category={nose} />
+        <TastingCategory title="味わい" category={palate} />
+        <TastingCategory title="総合評価" category={conclusion} /> */}
         <Button type="submit">保存</Button>
       </Form>
     </>

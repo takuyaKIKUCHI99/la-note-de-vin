@@ -3,10 +3,11 @@ import { Header } from 'semantic-ui-react';
 
 type Props = {
   title: string;
+  as: string;
 };
 
-const CategoryTitle: FC<Props> = ({ title }) => (
-  <Header as="h2">{title}</Header>
+const CategoryTitle: FC<Props> = ({ title, as }) => (
+  <Header as={as}>{title}</Header>
 );
 
 export default CategoryTitle;
