@@ -3,6 +3,7 @@ import { Button, Form, Header } from 'semantic-ui-react';
 import TextInput from 'components/molecules/TextInput';
 import TastingCategory, {
   Categories,
+  CategoryItems,
 } from 'components/organisms/TastingCategory';
 import { APPEARANCE } from 'constants/index';
 // import { APPEARANCE, NOSE, PALATE, CONCLUSION } from 'constants/index';
@@ -14,36 +15,23 @@ type Props = {
 const TastingSheet: FC<Props> = ({ type }) => {
   const [wineName, setWineName] = useState('');
   const [vintage, setVintage] = useState('');
-  const [appearance, setAppearance] = useState<Categories>(APPEARANCE);
-  // const [nose, setNose] = useState<Categories>(NOSE);
-  // const [palate, setPalate] = useState<Categories>(PALATE);
-  // const [conclusion, setConclusion] = useState<Categories>(CONCLUSION);
+  const [appearance, setAppearance] = useState<CategoryItems>(APPEARANCE);
+  // const [nose, setNose] = useState<CategoryItems>(NOSE);
+  // const [palate, setPalate] = useState<CategoryItems>(PALATE);
+  // const [conclusion, setConclusion] = useState<CategoryItems>(CONCLUSION);
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
     const { id } = e.target;
-    switch (id) {
-      case 'ワイン名':
-        setWineName(value);
-        break;
-      case 'ヴィンテージ':
-        setVintage(value);
-        break;
-      case '外観':
-        setAppearance(APPEARANCE);
-        break;
-      // case '香り':
-      //   setNose({ test: false, test2: true });
-      //   break;
-      // case '味わい':
-      //   setPalate({ test: false, test2: true });
-      //   break;
-      // case '総合評価':
-      //   setConclusion({ test: false, test2: true });
-      //   break;
-      default:
-      // This will not happen
-    }
+    if (id === 'ワイン名') setWineName(value);
+    if (id === 'ヴィンテージ') setVintage(value);
+  };
+
+  const handleCategoryChange = (
+    attributes: CategoryItems,
+    title: Categories,
+  ) => {
+    if (title === '外観') setAppearance(attributes);
   };
 
   return (
@@ -55,14 +43,18 @@ const TastingSheet: FC<Props> = ({ type }) => {
         <TextInput
           label="ワイン名"
           value={wineName}
-          handleChange={handleChange}
+          handleChange={handleInputChange}
         />
         <TextInput
           label="ヴィンテージ"
           value={vintage}
-          handleChange={handleChange}
+          handleChange={handleInputChange}
         />
-        <TastingCategory title="外観" category={appearance} />
+        <TastingCategory
+          title="外観"
+          category={appearance}
+          handleCategoryChange={handleCategoryChange}
+        />
         {/* <TastingCategory title="香り" category={nose} />
         <TastingCategory title="味わい" category={palate} />
         <TastingCategory title="総合評価" category={conclusion} /> */}
