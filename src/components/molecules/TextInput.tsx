@@ -2,9 +2,9 @@ import React, { FC, ChangeEvent } from 'react';
 import { Form } from 'semantic-ui-react';
 
 type Props = {
+  handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
   label: string;
   value: string;
-  handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
 const TextInput: FC<Props> = ({ label, value, handleChange }) => (

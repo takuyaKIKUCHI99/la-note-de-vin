@@ -9,8 +9,8 @@ export type Attributes = {
   items: Items;
 };
 type Props = {
-  subCategory: string;
   items: Items;
+  subCategory: string;
   updateCategory: (attributes: Attributes) => void;
 };
 
@@ -27,9 +27,9 @@ const CategoryItems: FC<Props> = ({ subCategory, items, updateCategory }) => {
     <>
       {keys.map((key) => (
         <Checkbox
+          defaultChecked={items[key]}
           key={key}
           label={key}
-          defaultChecked={items[key]}
           onChange={() => updateSubCategory(key)}
         />
       ))}

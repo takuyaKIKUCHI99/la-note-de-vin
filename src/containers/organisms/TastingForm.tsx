@@ -12,7 +12,7 @@ type Props = {
   type: 'red' | 'white';
 };
 
-const TastingSheet: FC<Props> = ({ type }) => {
+const TastingFrom: FC<Props> = ({ type }) => {
   const [wineName, setWineName] = useState('');
   const [vintage, setVintage] = useState('');
   const [appearance, setAppearance] = useState<CategoryItems>(APPEARANCE);
@@ -64,4 +64,4 @@ const TastingSheet: FC<Props> = ({ type }) => {
   );
 };
 
-export default TastingSheet;
+export default TastingFrom;

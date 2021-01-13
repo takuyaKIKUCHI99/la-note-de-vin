@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
-import CategoryTitle from 'components/atoms/CategoryTitle';
+import { Header } from 'semantic-ui-react';
 import CategoryItems, {
   Items,
   Attributes,
-} from 'components/molecules/CategoryItems';
+} from 'containers/molecules/CategoryItems';
 
 export type Categories = '外観' | '香り' | '味わい' | '総合評価';
 export type CategoryItems = {
@@ -30,10 +30,10 @@ const TastingCategory: FC<Props> = ({
 
   return (
     <div>
-      <CategoryTitle title={title} as="h2" />
+      <Header as="h2">{title}</Header>
       {subCategories.map((subCategory) => (
         <div key={subCategory}>
-          <CategoryTitle title={subCategory} as="h3" />
+          <Header as="h2">{subCategory}</Header>
           <CategoryItems
             subCategory={subCategory}
             items={category[subCategory]}
