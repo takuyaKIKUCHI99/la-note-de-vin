@@ -29,7 +29,7 @@ const TastingCategory: FC<Props> = ({
   };
 
   return (
-    <div>
+    <div style={{ marginBottom: '2rem' }}>
       <Header as="h2">{title}</Header>
       {subCategories.map((subCategory) => (
         <div key={subCategory}>

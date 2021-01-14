@@ -5,8 +5,7 @@ import TastingCategory, {
   Categories,
   CategoryItems,
 } from 'containers/organisms/TastingCategory';
-import { APPEARANCE } from 'constants/index';
-// import { APPEARANCE, NOSE, PALATE, CONCLUSION } from 'constants/index';
+import { APPEARANCE, NOSE } from 'constants/index';
 
 type Props = {
   type: 'red' | 'white';
@@ -16,7 +15,7 @@ const TastingSheet: FC<Props> = ({ type }) => {
   const [wineName, setWineName] = useState('');
   const [vintage, setVintage] = useState('');
   const [appearance, setAppearance] = useState<CategoryItems>(APPEARANCE);
-  // const [nose, setNose] = useState<CategoryItems>(NOSE);
+  const [nose, setNose] = useState<CategoryItems>(NOSE);
   // const [palate, setPalate] = useState<CategoryItems>(PALATE);
   // const [conclusion, setConclusion] = useState<CategoryItems>(CONCLUSION);
 
@@ -32,6 +31,7 @@ const TastingSheet: FC<Props> = ({ type }) => {
     title: Categories,
   ) => {
     if (title === '外観') setAppearance(attributes);
+    if (title === '香り') setNose(attributes);
   };
 
   return (
@@ -55,9 +55,11 @@ const TastingSheet: FC<Props> = ({ type }) => {
           category={appearance}
           handleCategoryChange={handleCategoryChange}
         />
-        {/* <TastingCategory title="香り" category={nose} />
-        <TastingCategory title="味わい" category={palate} />
-        <TastingCategory title="総合評価" category={conclusion} /> */}
+        <TastingCategory
+          title="香り"
+          category={nose}
+          handleCategoryChange={handleCategoryChange}
+        />
         <Button type="submit">保存</Button>
       </Form>
     </>
