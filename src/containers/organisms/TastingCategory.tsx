@@ -33,7 +33,7 @@ const TastingCategory: FC<Props> = ({
       <Header as="h2">{title}</Header>
       {subCategories.map((subCategory) => (
         <div key={subCategory}>
-          <Header as="h2">{subCategory}</Header>
+          <Header as="h3">{subCategory}</Header>
           <CategoryItems
             subCategory={subCategory}
             items={category[subCategory]}
