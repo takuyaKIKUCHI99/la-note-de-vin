@@ -1,21 +1,15 @@
 import React, { FC } from 'react';
-import { Header } from 'semantic-ui-react';
-import CategoryItems, {
-  Items,
-  Attributes,
-} from 'containers/molecules/CategoryItems';
+import TastingCategory from 'components/organisms/TastingCategory';
+import { Attributes } from 'containers/molecules/TastingItems';
+import { Categories, CategoryItems } from 'data/tastingCateogries';
 
-export type Categories = '外観' | '香り' | '味わい' | '総合評価';
-export type CategoryItems = {
-  [key: string]: Items;
-};
 type Props = {
   title: Categories;
   category: CategoryItems;
   handleCategoryChange: (attributes: CategoryItems, title: Categories) => void;
 };
 
-const TastingCategory: FC<Props> = ({
+const EnhancedTastingCategory: FC<Props> = ({
   title,
   category,
   handleCategoryChange,
@@ -29,20 +23,13 @@ const TastingCategory: FC<Props> = ({
   };
 
   return (
-    <div style={{ marginBottom: '2rem' }}>
-      <Header as="h2">{title}</Header>
-      {subCategories.map((subCategory) => (
-        <div key={subCategory}>
-          <Header as="h3">{subCategory}</Header>
-          <CategoryItems
-            subCategory={subCategory}
-            items={category[subCategory]}
-            updateCategory={updateCategory}
-          />
-        </div>
-      ))}
-    </div>
+    <TastingCategory
+      category={category}
+      subCategories={subCategories}
+      title={title}
+      updateCategory={updateCategory}
+    />
   );
 };
 
-export default TastingCategory;
+export default EnhancedTastingCategory;

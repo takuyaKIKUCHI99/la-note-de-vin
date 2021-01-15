@@ -1,4 +1,14 @@
-export const APPEARANCE = {
+export type Categories = '外観' | '香り' | '味わい' | '総合評価';
+
+export type CategoryItems = {
+  [key: string]: Items;
+};
+
+export type Items = {
+  [key: string]: boolean;
+};
+
+export const appearanceDefault: CategoryItems = {
   清澄度: {
     澄んだ: false,
     深みのある: false,
@@ -48,7 +58,7 @@ export const APPEARANCE = {
   },
 };
 
-export const NOSE = {
+export const nodeDefault: CategoryItems = {
   第一印象: {
     閉じている: false,
     控えめ: false,
@@ -123,7 +133,7 @@ export const NOSE = {
   },
 };
 
-export const PALATE = {
+export const palateDefault: CategoryItems = {
   アタック: {
     軽い: false,
     やや軽い: false,
@@ -181,7 +191,7 @@ export const PALATE = {
   },
 };
 
-export const CONCLUSION = {
+export const conclusionDefault: CategoryItems = {
   清澄度: {
     澄んだ: false,
     深みのある: false,

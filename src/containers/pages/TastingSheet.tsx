@@ -1,11 +1,14 @@
 import React, { FC, ChangeEvent, useState } from 'react';
 import { Button, Form, Header } from 'semantic-ui-react';
 import TextInput from 'components/molecules/TextInput';
-import TastingCategory, {
+import TastingCategory from 'containers/organisms/TastingCategory';
+import {
+  appearanceDefault,
+  nodeDefault,
+  palateDefault,
   Categories,
   CategoryItems,
-} from 'containers/organisms/TastingCategory';
-import { APPEARANCE, NOSE, PALATE } from 'constants/index';
+} from 'data/tastingCateogries';
 
 type Props = {
   type: 'red' | 'white';
@@ -14,9 +17,11 @@ type Props = {
 const TastingSheet: FC<Props> = ({ type }) => {
   const [wineName, setWineName] = useState('');
   const [vintage, setVintage] = useState('');
-  const [appearance, setAppearance] = useState<CategoryItems>(APPEARANCE);
-  const [nose, setNose] = useState<CategoryItems>(NOSE);
-  const [palate, setPalate] = useState<CategoryItems>(PALATE);
+  const [appearance, setAppearance] = useState<CategoryItems>(
+    appearanceDefault,
+  );
+  const [nose, setNose] = useState<CategoryItems>(nodeDefault);
+  const [palate, setPalate] = useState<CategoryItems>(palateDefault);
   // const [conclusion, setConclusion] = useState<CategoryItems>(CONCLUSION);
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {

@@ -1,9 +1,7 @@
 import React, { FC } from 'react';
 import { Checkbox } from 'semantic-ui-react';
+import { Items } from 'data/tastingCateogries';
 
-export type Items = {
-  [key: string]: boolean;
-};
 export type Attributes = {
   subCategory: string;
   items: Items;
@@ -14,7 +12,7 @@ type Props = {
   updateCategory: (attributes: Attributes) => void;
 };
 
-const CategoryItems: FC<Props> = ({ subCategory, items, updateCategory }) => {
+const TastingItems: FC<Props> = ({ subCategory, items, updateCategory }) => {
   const keys = Object.keys(items);
 
   const updateSubCategory = (item: string) => {
@@ -37,4 +35,4 @@ const CategoryItems: FC<Props> = ({ subCategory, items, updateCategory }) => {
   );
 };
 
-export default CategoryItems;
+export default TastingItems;
