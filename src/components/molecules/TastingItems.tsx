@@ -15,6 +15,7 @@ const TastingItems: FC<Props> = ({ keys, items, updateSubCategory }) => (
         defaultChecked={items[key]}
         key={key}
         label={key}
+        style={{ margin: '0 1rem 1rem 0' }}
         onChange={() => updateSubCategory(key)}
       />
     ))}
