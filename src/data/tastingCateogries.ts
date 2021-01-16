@@ -68,7 +68,7 @@ export const nodeDefault: CategoryItems = {
     深みのある: false,
     複雑な: false,
   },
-  '果実、花、植物': {
+  果実_花_植物: {
     イチゴ: false,
     ラズベリー: false,
     ブルーベリー: false,
@@ -96,7 +96,7 @@ export const nodeDefault: CategoryItems = {
     腐葉土: false,
     土: false,
   },
-  '香辛料、芳香、化学物質': {
+  香辛料_芳香_化学物質: {
     血液: false,
     肉: false,
     なめし皮: false,
@@ -167,7 +167,7 @@ export const palateDefault: CategoryItems = {
     スマートな: false,
     骨格のしっかりとした: false,
     固い: false,
-    '痩せた、渇いた': false,
+    痩せた_渇いた: false,
     豊満な: false,
     肉厚な: false,
     力強い: false,
@@ -191,10 +191,10 @@ export const palateDefault: CategoryItems = {
 
 export const conclusionDefault: CategoryItems = {
   評価: {
-    'シンプル、フレッシュ感を楽しむ': false,
-    '成熟度が高く、豊か': false,
-    '濃縮し、力強い': false,
-    'エレガントで、余韻の長い': false,
+    シンプル_フレッシュ感を楽しむ: false,
+    成熟度が高く_豊か: false,
+    濃縮し_力強い: false,
+    エレガントで_余韻の長い: false,
     長期熟成型: false,
   },
   適正温度: {

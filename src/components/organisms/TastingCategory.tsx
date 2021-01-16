@@ -29,7 +29,9 @@ const TastingCategory: FC<Props> = ({
           style={{ margin: 0, boxShadow: '0px 0px 0px 0.5px #D4D4D5' }}
         >
           <Grid.Column width={2} verticalAlign="middle" textAlign="center">
-            <Header as="h3">{subCategory}</Header>
+            <Header as="h3" style={{ whiteSpace: 'pre-line' }}>
+              {subCategory.replace(/_/g, '\n')}
+            </Header>
           </Grid.Column>
           <Grid.Column width={14} verticalAlign="middle">
             <TastingItems
