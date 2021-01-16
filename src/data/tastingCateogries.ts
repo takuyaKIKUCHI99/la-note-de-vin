@@ -1,11 +1,9 @@
-export type Categories = '外観' | '香り' | '味わい' | '総合評価';
+export type Items = {
+  [key: string]: boolean;
+};
 
 export type CategoryItems = {
   [key: string]: Items;
-};
-
-export type Items = {
-  [key: string]: boolean;
 };
 
 export const appearanceDefault: CategoryItems = {

@@ -1,12 +1,10 @@
 import React, { FC, ChangeEvent, useState } from 'react';
-import { Button, Form, Header } from 'semantic-ui-react';
-import TextInput from 'components/molecules/TextInput';
-import TastingCategory from 'containers/organisms/TastingCategory';
+import { Categories } from 'components/organisms/TastingCategory';
+import TastingSheet from 'components/pages/TastingSheet';
 import {
   appearanceDefault,
   nodeDefault,
   palateDefault,
-  Categories,
   CategoryItems,
 } from 'data/tastingCateogries';
 
@@ -14,7 +12,7 @@ type Props = {
   type: 'red' | 'white';
 };
 
-const TastingSheet: FC<Props> = ({ type }) => {
+const EnhancedTastingSheet: FC<Props> = ({ type }) => {
   const [wineName, setWineName] = useState('');
   const [vintage, setVintage] = useState('');
   const [appearance, setAppearance] = useState<CategoryItems>(
@@ -41,40 +39,17 @@ const TastingSheet: FC<Props> = ({ type }) => {
   };
 
   return (
-    <>
-      <Header as="h1">
-        {type === 'red' ? '赤' : '白'}ワイン・テイスティングシート
-      </Header>
-      <Form>
-        <TextInput
-          label="ワイン名"
-          value={wineName}
-          handleChange={handleInputChange}
-        />
-        <TextInput
-          label="ヴィンテージ"
-          value={vintage}
-          handleChange={handleInputChange}
-        />
-        <TastingCategory
-          title="外観"
-          category={appearance}
-          handleCategoryChange={handleCategoryChange}
-        />
-        <TastingCategory
-          title="香り"
-          category={nose}
-          handleCategoryChange={handleCategoryChange}
-        />
-        <TastingCategory
-          title="味わい"
-          category={palate}
-          handleCategoryChange={handleCategoryChange}
-        />
-        <Button type="submit">保存</Button>
-      </Form>
-    </>
+    <TastingSheet
+      appearance={appearance}
+      nose={nose}
+      palate={palate}
+      type={type}
+      vintage={vintage}
+      wineName={wineName}
+      handleCategoryChange={handleCategoryChange}
+      handleInputChange={handleInputChange}
+    />
   );
 };
 
-export default TastingSheet;
+export default EnhancedTastingSheet;

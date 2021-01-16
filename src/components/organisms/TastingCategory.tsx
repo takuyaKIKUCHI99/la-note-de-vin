@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
 import { Header } from 'semantic-ui-react';
 import TastingItems, { Attributes } from 'containers/molecules/TastingItems';
-import { CategoryItems, Categories } from 'data/tastingCateogries';
+import { CategoryItems } from 'data/tastingCateogries';
 
+export type Categories = '外観' | '香り' | '味わい' | '総合評価';
 type Props = {
   category: CategoryItems;
   subCategories: string[];

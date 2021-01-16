@@ -1,7 +1,9 @@
 import React, { FC } from 'react';
-import TastingCategory from 'components/organisms/TastingCategory';
+import TastingCategory, {
+  Categories,
+} from 'components/organisms/TastingCategory';
 import { Attributes } from 'containers/molecules/TastingItems';
-import { Categories, CategoryItems } from 'data/tastingCateogries';
+import { CategoryItems } from 'data/tastingCateogries';
 
 type Props = {
   title: Categories;
