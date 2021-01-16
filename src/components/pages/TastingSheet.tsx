@@ -7,6 +7,7 @@ import { CategoryItems } from 'data/tastingCateogries';
 
 type Props = {
   appearance: CategoryItems;
+  conclusion: CategoryItems;
   nose: CategoryItems;
   palate: CategoryItems;
   type: 'red' | 'white';
@@ -18,6 +19,7 @@ type Props = {
 
 const TastingSheet: FC<Props> = ({
   appearance,
+  conclusion,
   nose,
   palate,
   type,
@@ -54,6 +56,11 @@ const TastingSheet: FC<Props> = ({
       <TastingCategory
         title="味わい"
         category={palate}
+        handleCategoryChange={handleCategoryChange}
+      />
+      <TastingCategory
+        title="総合評価"
+        category={conclusion}
         handleCategoryChange={handleCategoryChange}
       />
       <Button type="submit">保存</Button>
