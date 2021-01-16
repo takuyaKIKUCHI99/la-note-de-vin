@@ -12,22 +12,28 @@
 
 /*-------------------
   Site Colors
-  NIPPON COLORS: https://nipponcolors.com/#shironeri
 --------------------*/
 
 /*---  Colors  ---*/
-@kurobeni            : #3E2935;
-@mizu                : #7DC1CF;
-@sumi                : #1A1A1A;
-@hai                 : #808080;
-@shironeri           : #FCFAF2;
+@blue             : #3B83C0;
+@green            : #5BBD72;
+@orange           : #E07B53;
+@pink             : #D9499A;
+@purple           : #564F8A;
+@red              : #D95C5C;
+@teal             : #00B5AD;
+@yellow           : #F2C61F;
+
+@black            : #1B1C1D;
+@grey             : #CCCCCC;
+@white            : #FFFFFF;
 
 /*---  Brand Colors  ---*/
-@primaryColor        : @kurobeni;
-@secondaryColor      : @mizu;
+@primaryColor        : @purple;
+@secondaryColor      : @teal;
 
 /*-------------------
       Page
 --------------------*/
 
-@pageBackground      : @shironeri;
+@pageBackground      : @white;
