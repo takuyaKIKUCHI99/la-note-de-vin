@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Checkbox } from 'semantic-ui-react';
-import { Items } from 'data/tastingCateogries';
+import { Items } from 'data/tastingCategories';
 
 export type Attributes = {
   subCategory: string;

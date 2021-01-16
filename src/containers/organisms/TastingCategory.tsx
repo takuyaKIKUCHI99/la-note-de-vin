@@ -3,7 +3,7 @@ import TastingCategory, {
   Categories,
 } from 'components/organisms/TastingCategory';
 import { Attributes } from 'containers/molecules/TastingItems';
-import { CategoryItems } from 'data/tastingCateogries';
+import { CategoryItems } from 'data/tastingCategories';
 
 type Props = {
   title: Categories;

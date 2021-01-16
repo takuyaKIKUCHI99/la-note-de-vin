@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { Button, Container, Form, Header } from 'semantic-ui-react';
 import { Categories } from 'components/organisms/TastingCategory';
 import TastingCategory from 'containers/organisms/TastingCategory';
-import { CategoryItems } from 'data/tastingCateogries';
+import { CategoryItems } from 'data/tastingCategories';
 
 export type WineType = 'red' | 'white';
 type Props = {

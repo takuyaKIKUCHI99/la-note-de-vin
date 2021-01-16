@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Header, Grid } from 'semantic-ui-react';
 import TastingItems, { Attributes } from 'containers/molecules/TastingItems';
-import { CategoryItems } from 'data/tastingCateogries';
+import { CategoryItems } from 'data/tastingCategories';
 
 export type Categories = '外観' | '香り' | '味わい' | '総合評価';
 type Props = {

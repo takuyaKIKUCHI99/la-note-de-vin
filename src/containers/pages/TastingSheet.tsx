@@ -7,7 +7,7 @@ import {
   nodeDefault,
   palateDefault,
   CategoryItems,
-} from 'data/tastingCateogries';
+} from 'data/tastingCategories';
 
 type Props = {
   wineType: WineType;
