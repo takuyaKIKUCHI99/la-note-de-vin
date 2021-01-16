@@ -22,7 +22,6 @@
     "baseUrl": "src", // To enable an absolute path import
     "downlevelIteration": true,
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"],
+  "exclude": ["node_modules", "build", "scripts", "functions"]
 }
