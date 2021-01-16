@@ -15,5 +15,11 @@
   "typescript.tsdk": "./node_modules/typescript/lib",
   "[markdown]": {
     "files.trimTrailingWhitespace": false
-  }
+  },
+  "cSpell.words": [
+    "browserslist",
+    "craco",
+    "stylelint",
+    "typesync"
+  ]
 }
