@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { Checkbox } from 'semantic-ui-react';
 import { Items } from 'data/tastingCategories';
+import TastingItems from 'components/molecules/TastingItems';
 
 export type Attributes = {
   subCategory: string;
@@ -12,7 +12,11 @@ type Props = {
   updateCategory: (attributes: Attributes) => void;
 };
 
-const TastingItems: FC<Props> = ({ subCategory, items, updateCategory }) => {
+const EnhancedTastingItems: FC<Props> = ({
+  subCategory,
+  items,
+  updateCategory,
+}) => {
   const keys = Object.keys(items);
 
   const updateSubCategory = (item: string) => {
@@ -22,17 +26,12 @@ const TastingItems: FC<Props> = ({ subCategory, items, updateCategory }) => {
   };
 
   return (
-    <>
-      {keys.map((key) => (
-        <Checkbox
-          defaultChecked={items[key]}
-          key={key}
-          label={key}
-          onChange={() => updateSubCategory(key)}
-        />
-      ))}
-    </>
+    <TastingItems
+      keys={keys}
+      items={items}
+      updateSubCategory={updateSubCategory}
+    />
   );
 };
 
-export default TastingItems;
+export default EnhancedTastingItems;
