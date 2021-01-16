@@ -4,7 +4,7 @@ import TastingSheet from 'containers/pages/TastingSheet';
 const App: FC = () => {
   return (
     <div className="App">
-      <TastingSheet type="red" />
+      <TastingSheet wineType="red" />
     </div>
   );
 };

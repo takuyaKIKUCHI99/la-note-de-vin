@@ -1,20 +1,17 @@
-import React, { FC, ChangeEvent } from 'react';
+import React, { FC } from 'react';
 import { Button, Form, Header } from 'semantic-ui-react';
-import TextInput from 'components/molecules/TextInput';
 import { Categories } from 'components/organisms/TastingCategory';
 import TastingCategory from 'containers/organisms/TastingCategory';
 import { CategoryItems } from 'data/tastingCateogries';
 
+export type WineType = 'red' | 'white';
 type Props = {
   appearance: CategoryItems;
   conclusion: CategoryItems;
   nose: CategoryItems;
   palate: CategoryItems;
-  type: 'red' | 'white';
-  vintage: string;
-  wineName: string;
+  wineType: WineType;
   handleCategoryChange: (attributes: CategoryItems, title: Categories) => void;
-  handleInputChange: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
 const TastingSheet: FC<Props> = ({
@@ -22,27 +19,14 @@ const TastingSheet: FC<Props> = ({
   conclusion,
   nose,
   palate,
-  type,
-  vintage,
-  wineName,
+  wineType,
   handleCategoryChange,
-  handleInputChange,
 }) => (
   <>
-    <Header as="h1">
-      {type === 'red' ? '赤' : '白'}ワイン・テイスティングシート
+    <Header as="h1" textAlign="center">
+      {wineType === 'red' ? '赤' : '白'}ワイン・テイスティング用語選択用紙
     </Header>
     <Form>
-      <TextInput
-        label="ワイン名"
-        value={wineName}
-        handleChange={handleInputChange}
-      />
-      <TextInput
-        label="ヴィンテージ"
-        value={vintage}
-        handleChange={handleInputChange}
-      />
       <TastingCategory
         title="外観"
         category={appearance}
