@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Button, Form, Header } from 'semantic-ui-react';
+import { Button, Container, Form, Header } from 'semantic-ui-react';
 import { Categories } from 'components/organisms/TastingCategory';
 import TastingCategory from 'containers/organisms/TastingCategory';
 import { CategoryItems } from 'data/tastingCateogries';
@@ -22,7 +22,7 @@ const TastingSheet: FC<Props> = ({
   wineType,
   handleCategoryChange,
 }) => (
-  <>
+  <Container>
     <Header as="h1" textAlign="center">
       {wineType === 'red' ? '赤' : '白'}ワイン・テイスティング用語選択用紙
     </Header>
@@ -49,7 +49,7 @@ const TastingSheet: FC<Props> = ({
       />
       <Button type="submit">保存</Button>
     </Form>
-  </>
+  </Container>
 );
 
 export default TastingSheet;
